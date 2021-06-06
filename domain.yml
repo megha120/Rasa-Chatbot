@@ -1,0 +1,74 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- report_issue
+- account_locked
+- network_error
+- employee
+- thanks
+entities:
+- employee_id
+slots:
+  employee_id:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Hey! Welcome to IT Support. Would you like to report an IT Problem?
+  utter_employee_id:
+  - text: Great! May I have your Employee ID please?
+  utter_issue:
+  - buttons:
+    - payload: Account Locked
+      title: Account Locked
+    - payload: Network Error
+      title: Network Error
+    text: Thank You John Smith! What’s the issue?
+  utter_restart:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Have you tried restarting your machine?
+  utter_password:
+  - text: Just a moment please. New Password has been mailed to you.
+  utter_goodbye:
+  - text: Thank you for contacting us. You have a wonderful day ahead
+  utter_problem:
+  - text: Please explain the problem you are facing
+  utter_ticket:
+  - text: We apologize for the inconvenience caused. I have raised an IT ticket IT8975
+      and sent you an email. A member from IT team will call you or visit your workstation
+      shortly.
+  utter_restart2:
+  - text: "Please restart your machine. If you still experience the same problem,\
+      \ please do not hesitate to contact us back. \nIs there anything else we can\
+      \ help you ?"
+  utter_anything_else:
+  - text: Happy to help! Is there anything else we can help you ?
+  utter_iamabot:
+  - text: I am just a bot. I couldný understand that. Please try again.
+actions:
+- utter_greet
+- utter_employee_id
+- utter_issue
+- utter_goodbye
+- form_get_employee_id
+- form{"name":"form_get_employee_id"}
+forms:
+  form_get_employee_id: {}
+  form_get_issue_type: {}
