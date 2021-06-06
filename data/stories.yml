@@ -1,0 +1,140 @@
+version: "2.0"
+stories:
+- story: exit flow
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_goodbye
+- story: account locked 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_employee_id
+  - intent: employee
+    entities:
+    - employee_id: employee_id
+  - action: utter_issue
+  - intent: account_locked
+  - action: utter_restart
+  - intent: affirm
+  - action: utter_password
+  - intent: thanks
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_goodbye
+- story: network error 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_employee_id
+  - intent: employee
+    entities:
+    - employee_id: employee_id
+  - action: utter_issue
+  - intent: network_error
+  - action: utter_restart
+  - intent: affirm
+  - action: utter_problem
+  - intent: network_error
+  - action: utter_ticket
+  - intent: thanks
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_goodbye
+- story: account locked 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_employee_id
+  - intent: employee
+    entities:
+    - employee_id: employee_id
+  - action: utter_issue
+  - intent: account_locked
+  - action: utter_restart
+  - intent: deny
+  - action: utter_restart2
+  - intent: deny
+  - action: utter_goodbye
+- story: network error 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_employee_id
+  - intent: employee
+    entities:
+    - employee_id: employee_id
+  - action: utter_issue
+  - intent: network_error
+  - action: utter_restart
+  - intent: deny
+  - action: utter_restart2
+  - intent: deny
+  - action: utter_goodbye
+- story: report issue 1
+  steps:
+  - intent: report_issue
+  - action: utter_employee_id
+  - intent: employee
+    entities:
+    - employee_id: employee_id
+  - action: utter_issue
+  - intent: network_error
+  - action: utter_restart
+  - intent: deny
+  - action: utter_restart2
+  - intent: deny
+  - action: utter_goodbye
+- story: report issue 2
+  steps:
+  - intent: report_issue
+  - action: utter_employee_id
+  - intent: employee
+    entities:
+    - employee_id: employee_id
+  - action: utter_issue
+  - intent: account_locked
+  - action: utter_restart
+  - intent: deny
+  - action: utter_restart2
+  - intent: deny
+  - action: utter_goodbye
+- story: report issue 3
+  steps:
+  - intent: report_issue
+  - action: utter_employee_id
+  - intent: employee
+    entities:
+    - employee_id: employee_id
+  - action: utter_issue
+  - intent: account_locked
+  - action: utter_restart
+  - intent: affirm
+  - action: utter_password
+  - intent: thanks
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_goodbye
+- story: report issue 4
+  steps:
+  - intent: report_issue
+  - action: utter_employee_id
+  - intent: employee
+    entities:
+    - employee_id: employee_id
+  - action: utter_issue
+  - intent: network_error
+  - action: utter_restart
+  - intent: affirm
+  - action: utter_problem
+  - intent: network_error
+  - action: utter_ticket
+  - intent: thanks
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_goodbye
